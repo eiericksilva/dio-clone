@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
+import Button from '../../components/button'
 import React from 'react'
+import Header from '../../components/header'
 
 const Home = () => {
   return (
     <>
-        <div>Home</div>
-        <Link to='/login'>Go Login</Link>
+      <Header />
+      <Button title='teste1'></Button>
+      <Button title='teste1' variant='secondary' />
+      <Link to='/login'>Go Login</Link>
     </>
    
   )
