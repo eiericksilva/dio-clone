@@ -1,9 +1,8 @@
-
-import Button from '../../components/button'
-import React from 'react'
-import Header from '../../components/header'
-import { Container, TextContent, Title, TitleHighlight } from './styles'
-import bannerImage from '../../assets/banner.png'
+import Button from "../../components/button";
+import React from "react";
+import Header from "../../components/header";
+import { Container, TextContent, Title, TitleHighlight } from "./styles";
+import bannerImage from "../../assets/banner.png";
 
 const Home = () => {
   return (
@@ -11,14 +10,17 @@ const Home = () => {
       <Header />
       <Container>
         <div>
-          <Title> 
+          <Title>
             <TitleHighlight>
-              Implemente<br /> 
+              Implemente
+              <br />
             </TitleHighlight>
-              o o seu futuro global agora!
+            o o seu futuro global agora!
           </Title>
           <TextContent>
-            Domine as tecnologias utilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
+            Domine as tecnologias utilizadas pelas empresas mais inovadoras do
+            mundo e encare seu novo desafio profissional, evoluindo em
+            comunidade com os melhores experts.
           </TextContent>
           <Button title="Começar agora" variant="secondary" />
         </div>
@@ -27,8 +29,7 @@ const Home = () => {
         </div>
       </Container>
     </>
-   
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
