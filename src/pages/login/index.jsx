@@ -13,9 +13,12 @@ import {
   Wrapper,
 } from "./styles";
 
+import { api } from "../../services/api";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup
   .object({
@@ -28,14 +31,29 @@ const schema = yup
   .required();
 
 const Login = () => {
+  const navigate = useNavigate();
   const {
     register,
     control,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
-  const onSubmit = (data) => {
-    console.log(data);
+
+  const onSubmit = async (formData) => {
+    try {
+      const { data } = await api.get(
+        `/users?email=${formData.email}&senha=${formData.senha}`
+      );
+      if (data.length === 1) {
+        navigate("/");
+        return;
+      } else {
+        alert("Email ou senha inválido");
+      }
+      console.log(data);
+    } catch (error) {
+      alert("houve um erro, tente novamente!");
+    }
   };
   console.log(errors);
 
