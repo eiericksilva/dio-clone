@@ -4,7 +4,13 @@ import Header from "../../components/header";
 import { Container, TextContent, Title, TitleHighlight } from "./styles";
 import bannerImage from "../../assets/banner.png";
 
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleClickSigIn = () => {
+    navigate("/login");
+  };
   return (
     <>
       <Header />
@@ -22,7 +28,11 @@ const Home = () => {
             mundo e encare seu novo desafio profissional, evoluindo em
             comunidade com os melhores experts.
           </TextContent>
-          <Button title="Começar agora" variant="secondary" />
+          <Button
+            title="Começar agora"
+            variant="secondary"
+            onClick={handleClickSigIn}
+          />
         </div>
         <div>
           <img src={bannerImage} alt="Imagem Principal" />

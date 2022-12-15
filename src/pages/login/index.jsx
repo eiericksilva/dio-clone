@@ -32,6 +32,10 @@ const schema = yup
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const handleClickSignIn = () => {
+    navigate("/feed");
+  };
   const {
     register,
     control,
@@ -45,7 +49,7 @@ const Login = () => {
         `/users?email=${formData.email}&senha=${formData.senha}`
       );
       if (data.length === 1) {
-        navigate("/");
+        navigate("/feed");
         return;
       } else {
         alert("Email ou senha inválido");
@@ -85,7 +89,12 @@ const Login = () => {
                 type="password"
               />
               <span>{errors.password?.message}</span>
-              <Button title="Entrar" variant="secondary" type="submit" />
+              <Button
+                title="Entrar"
+                variant="secondary"
+                type="button"
+                onClick={handleClickSignIn}
+              />
             </form>
             <Row>
               <EsqueciText>Esqueci minha senha</EsqueciText>

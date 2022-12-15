@@ -1,39 +1,47 @@
-import React from 'react'
-import { Container, Row, Wrapper,BuscarInputContainer,Menu,MenuRight,Input } from './styles'
-/* import {
-    Container, 
-    Row, 
-    Wrapper,
-    BuscarInputContainer,
-    Menu, 
-    MenuRight, 
-    Input  
-} from './styles' */
-import Button from '../button'
-import logo from '../../assets/logo-dio.png'
+import React from "react";
+import {
+  Container,
+  Row,
+  Wrapper,
+  BuscarInputContainer,
+  Menu,
+  MenuRight,
+  Input,
+  UserPicture,
+} from "./styles";
+import Button from "../button";
+import logo from "../../assets/logo-dio.png";
 
-
-const Header = () => {
-    
+const Header = ({ autenticado }) => {
   return (
     <Wrapper>
-        <Container>
-            <Row>
-                <img src={logo} alt="Logo da DIO"/>
-                <BuscarInputContainer>
-                    <Input placeholder="Buscar..." />
-                </BuscarInputContainer>
-                <Menu>Live Code</Menu>
-                <Menu>Global</Menu>
-            </Row>
-            <Row>
-                <MenuRight href='#'>Home</MenuRight>
-                <Button title="Entrar"/>
-                <Button title="Cadastrar"/>
-            </Row>
-        </Container>
+      <Container>
+        <Row>
+          <img src={logo} alt="Logo da DIO" />
+          {autenticado ? (
+            <>
+              <BuscarInputContainer>
+                <Input placeholder="Buscar..." />
+              </BuscarInputContainer>
+              <Menu>Live Code</Menu>
+              <Menu>Global</Menu>
+            </>
+          ) : null}
+        </Row>
+        <Row>
+          {autenticado ? (
+            <UserPicture src="https://avatars.githubusercontent.com/u/45184516?v=4" />
+          ) : (
+            <>
+              <MenuRight href="#">Home</MenuRight>
+              <Button title="Entrar" />
+              <Button title="Cadastrar" />
+            </>
+          )}
+        </Row>
+      </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
