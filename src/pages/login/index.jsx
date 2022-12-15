@@ -1,7 +1,7 @@
 import Button from "../../components/button";
 import React from "react";
 import Header from "../../components/header";
-import { TitleHighlight, Container, Title, TextContent } from "../home/styles";
+import { Container, Title } from "../home/styles";
 import { Input } from "../../components/header/styles";
 import {
   Column,
@@ -12,7 +12,6 @@ import {
   TitleLogin,
   Wrapper,
 } from "./styles";
-import { MdEmail, MdLock } from "react-icons/md";
 
 const Login = () => {
   return (
@@ -30,8 +29,8 @@ const Login = () => {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubtitleLogin>Faça seu login e make the change.</SubtitleLogin>
             <form>
-              <Input placeholder="email" leftIcon={<MdEmail />} />
-              <Input placeholder="senha" leftIcon={<MdLock />} />
+              <Input placeholder="E-mail" leftIcon="#" />
+              <Input placeholder="Senha" leftIcon="#" />
               <Button title="Entrar" variant="secondary"></Button>
             </form>
             <Row>

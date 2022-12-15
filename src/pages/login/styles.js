@@ -13,6 +13,13 @@ export const Container = styled.main`
 
 export const Wrapper = styled.div`
   max-width: 300px;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export const Column = styled.div`
