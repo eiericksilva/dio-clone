@@ -19,6 +19,13 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    span {
+      color: #ff0000;
+      font-size: 12px;
+      position: absolute;
+      margin-top: 50px;
+    }
   }
 `;
 

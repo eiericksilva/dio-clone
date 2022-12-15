@@ -1,12 +1,18 @@
 import React from "react";
-import { IconContainer, InputContainer, InputText } from "./styles";
+import { InputContainer, InputText } from "./styles";
+import { Controller } from "react-hook-form";
 
-const Input = ({ leftIcon, name, ...rest }) => {
+const Input = ({ register, name, control, errorMessage, ...rest }) => {
   return (
-    <InputContainer>
-      {leftIcon ? <IconContainer>{leftIcon}</IconContainer> : null}
-      <InputText {...rest} />
-    </InputContainer>
+    <>
+      <InputContainer>
+        <Controller
+          name={name}
+          control={control}
+          render={({ field }) => <InputText {...field} {...rest} />}
+        />
+      </InputContainer>
+    </>
   );
 };
 

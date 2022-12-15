@@ -9,10 +9,6 @@ export const InputContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const IconContainer = styled.div`
-  margin-right: 10px;
-`;
-
 export const InputText = styled.input`
   background-color: transparent;
   color: #ffffff;
